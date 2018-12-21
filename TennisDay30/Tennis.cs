@@ -16,14 +16,11 @@ namespace TennisDay30
 
         public string Score()
         {
-            if (_secondPlayerScoreTimes==1)
+            if (_secondPlayerScoreTimes==1||_secondPlayerScoreTimes==2)
             {
-                return "Love Fifteen";
+                return $"Love {_socreLookup[_secondPlayerScoreTimes]}";
             }
-            if (_secondPlayerScoreTimes==2)
-            {
-                return "Love Thirty";
-            }
+
             if (_firstPlayerScoreTimes>0)
             {
                 return $"{_socreLookup[_firstPlayerScoreTimes]} Love";
