@@ -1,14 +1,16 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using TennisDay30;
 
 namespace TennisDay30Tests
 {
     [TestClass]
-    public class UnitTest1
+    public class TennisTests
     {
         [TestMethod]
-        public void TestMethod1()
+        public void Love_All()
         {
+            var tennis = new Tennis();
+            Assert.AreEqual("Love All", tennis.Score());
         }
     }
 }
