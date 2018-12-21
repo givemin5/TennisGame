@@ -17,17 +17,27 @@ namespace TennisDay30Tests
         [TestMethod]
         public void Fifteen_Love()
         {
-            _tennis.FirstPlayerScore();
+            GivenFirstPlayerScoreTimes(1);
             ScoreShouldBe("Fifteen Love");
         }
 
         [TestMethod]
         public void Thirty_Love()
         {
-            _tennis.FirstPlayerScore();
-            _tennis.FirstPlayerScore();
+            GivenFirstPlayerScoreTimes(2);
             ScoreShouldBe("Thirty Love");
         }
+
+        private void GivenFirstPlayerScoreTimes(int times)
+        {
+            for (var i = 0; i < times; i++)
+            {
+                
+            _tennis.FirstPlayerScore();
+            }
+
+        }
+
         private void ScoreShouldBe(string expected)
         {
             Assert.AreEqual(expected, _tennis.Score());
