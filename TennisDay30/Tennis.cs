@@ -1,4 +1,6 @@
-﻿namespace TennisDay30
+﻿using System.Collections.Generic;
+
+namespace TennisDay30
 {
     public class Tennis
     {
@@ -6,15 +8,17 @@
 
         public string Score()
         {
-            if (_firstPlayerScoreTimes == 1)
+            var socreLookup = new Dictionary<int,string>
             {
-                return "Fifteen Love";
+                {1,"Fifteen" },
+                {2,"Thirty" },
+            };
+
+            if (_firstPlayerScoreTimes == 1||_firstPlayerScoreTimes==2)
+            {
+                return $"{socreLookup[_firstPlayerScoreTimes]} Love";
             }
 
-            if (_firstPlayerScoreTimes == 2)
-            {
-                return "Thirty Love";
-            }
 
             return "Love All";
         }
