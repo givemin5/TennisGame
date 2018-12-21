@@ -28,5 +28,10 @@ namespace TennisDay30
         {
             _firstPlayerScoreTimes++;
         }
+
+        public void SecondPlayerScore()
+        {
+            
+        }
     }
 }

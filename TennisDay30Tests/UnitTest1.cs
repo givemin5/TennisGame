@@ -34,6 +34,13 @@ namespace TennisDay30Tests
             GivenFirstPlayerScoreTimes(3);
             ScoreShouldBe("Forty Love");
         }
+
+        [TestMethod]
+        public void Love_Fifteen()
+        {
+            _tennis.SecondPlayerScore();
+            ScoreShouldBe("Love Fifteen");
+        }
         private void GivenFirstPlayerScoreTimes(int times)
         {
             for (var i = 0; i < times; i++)
