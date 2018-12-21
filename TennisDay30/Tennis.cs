@@ -9,6 +9,7 @@ namespace TennisDay30
 
         private Dictionary<int, string> _socreLookup = new Dictionary<int,string>
         {
+            {0,"Love" },
             {1,"Fifteen" },
             {2,"Thirty" },
             {3,"Forty" },
@@ -16,15 +17,11 @@ namespace TennisDay30
 
         public string Score()
         {
-            if (_secondPlayerScoreTimes>0)
+            if (_secondPlayerScoreTimes>0||_firstPlayerScoreTimes>0)
             {
-                return $"Love {_socreLookup[_secondPlayerScoreTimes]}";
+                return $"{_socreLookup[_firstPlayerScoreTimes]} {_socreLookup[_secondPlayerScoreTimes]}";
             }
 
-            if (_firstPlayerScoreTimes>0)
-            {
-                return $"{_socreLookup[_firstPlayerScoreTimes]} Love";
-            }
 
 
             return "Love All";
