@@ -5,19 +5,24 @@ namespace TennisDay30
     public class Tennis
     {
         private int _firstPlayerScoreTimes;
+        private int _secondPlayerScoreTimes;
+
+        private Dictionary<int, string> _socreLookup = new Dictionary<int,string>
+        {
+            {1,"Fifteen" },
+            {2,"Thirty" },
+            {3,"Forty" },
+        };
 
         public string Score()
         {
-            var socreLookup = new Dictionary<int,string>
+            if (_secondPlayerScoreTimes==1)
             {
-                {1,"Fifteen" },
-                {2,"Thirty" },
-                {3,"Forty" },
-            };
-
+                return "Love Fifteen";
+            }
             if (_firstPlayerScoreTimes>0)
             {
-                return $"{socreLookup[_firstPlayerScoreTimes]} Love";
+                return $"{_socreLookup[_firstPlayerScoreTimes]} Love";
             }
 
 
@@ -31,7 +36,7 @@ namespace TennisDay30
 
         public void SecondPlayerScore()
         {
-            
+            _secondPlayerScoreTimes++;
         }
     }
 }
