@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace TennisDay30
 {
@@ -27,11 +28,12 @@ namespace TennisDay30
         {
             if (IsScoreDifferent())
             {
-                if (_firstPlayerScoreTimes>3)
+                if (_firstPlayerScoreTimes>3||_secondPlayerScoreTimes>3)
                 {
-                    if (_firstPlayerScoreTimes-_secondPlayerScoreTimes==1)
+                    if (Math.Abs(_firstPlayerScoreTimes-_secondPlayerScoreTimes)==1)
                     {
-                        return $"{_firstPlayerName} Adv";
+                        var advPlayer = AdvPlayer();
+                        return $"{advPlayer} Adv";
                     }
                 }
 
@@ -44,6 +46,14 @@ namespace TennisDay30
             }
 
             return SameScore();
+        }
+
+        private string AdvPlayer()
+        {
+            var advPlayer = _firstPlayerScoreTimes > _secondPlayerScoreTimes
+                ? _firstPlayerName
+                : _secondPlayerName;
+            return advPlayer;
         }
 
         private bool IsDeuce()
