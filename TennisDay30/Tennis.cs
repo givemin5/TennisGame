@@ -17,14 +17,28 @@ namespace TennisDay30
 
         public string Score()
         {
-            if (_firstPlayerScoreTimes != _secondPlayerScoreTimes)
+            if (IsScoreDifferent())
             {
-                return $"{_socreLookup[_firstPlayerScoreTimes]} {_socreLookup[_secondPlayerScoreTimes]}";
+                return LookupScore();
             }
 
 
+            return SameScore();
+        }
 
-                return $"{_socreLookup[_firstPlayerScoreTimes]} All";
+        private bool IsScoreDifferent()
+        {
+            return _firstPlayerScoreTimes != _secondPlayerScoreTimes;
+        }
+
+        private string LookupScore()
+        {
+            return $"{_socreLookup[_firstPlayerScoreTimes]} {_socreLookup[_secondPlayerScoreTimes]}";
+        }
+
+        private string SameScore()
+        {
+            return $"{_socreLookup[_firstPlayerScoreTimes]} All";
         }
 
         public void FirstPlayerScore()
