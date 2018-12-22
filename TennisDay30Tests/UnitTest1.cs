@@ -75,10 +75,16 @@ namespace TennisDay30Tests
         [TestMethod]
         public void Deuce()
         {
-            GivenFirstPlayerScoreTimes(3);
-            GivenSecondPlayerScoreTimes(3);
+            GivenDeuce();
             ScoreShouldBe("Deuce");
         }
+
+        private void GivenDeuce()
+        {
+            GivenFirstPlayerScoreTimes(3);
+            GivenSecondPlayerScoreTimes(3);
+        }
+
         private void GivenSecondPlayerScoreTimes(int times)
         {
             for (var i = 0; i < times; i++)
