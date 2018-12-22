@@ -32,9 +32,9 @@ namespace TennisDay30
                 {
                     if (IsAdv())
                     {
-                        var advPlayer = AdvPlayer();
-                        return $"{advPlayer} Adv";
+                        return $"{AdvPlayer()} Adv";
                     }
+                        return $"{AdvPlayer()} Win";
                 }
 
                 return LookupScore();
