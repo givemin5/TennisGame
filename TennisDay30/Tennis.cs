@@ -22,12 +22,22 @@ namespace TennisDay30
                 return LookupScore();
             }
 
-            if (_firstPlayerScoreTimes >= 3)
+            if (IsDeuce())
             {
-                return "Deuce";
+                return Deuce();
             }
 
             return SameScore();
+        }
+
+        private bool IsDeuce()
+        {
+            return _firstPlayerScoreTimes >= 3;
+        }
+
+        private static string Deuce()
+        {
+            return "Deuce";
         }
 
         private bool IsScoreDifferent()
