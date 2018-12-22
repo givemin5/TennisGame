@@ -6,7 +6,7 @@ namespace TennisDay30Tests
     [TestClass]
     public class TennisTests
     {
-        private Tennis _tennis = new Tennis("Joey");
+        private Tennis _tennis = new Tennis("Joey","Tom");
 
         [TestMethod]
         public void Love_All()
@@ -85,6 +85,14 @@ namespace TennisDay30Tests
             GivenDeuce();
             GivenFirstPlayerScoreTimes(1);
             ScoreShouldBe("Joey Adv");
+        }
+
+        [TestMethod]
+        public void SecondPlayer_Adv()
+        {
+            GivenDeuce();
+            GivenSecondPlayerScoreTimes(1);
+            ScoreShouldBe("Tom Adv");
         }
         private void GivenDeuce()
         {

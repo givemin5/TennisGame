@@ -5,6 +5,7 @@ namespace TennisDay30
     public class Tennis
     {
         private readonly string _firstPlayerName;
+        private readonly string _secondPlayerName;
         private int _firstPlayerScoreTimes;
         private int _secondPlayerScoreTimes;
 
@@ -16,9 +17,10 @@ namespace TennisDay30
             {3, "Forty"},
         };
 
-        public Tennis(string firstPlayerName)
+        public Tennis(string firstPlayerName, string secondPlayerName)
         {
             _firstPlayerName = firstPlayerName;
+            _secondPlayerName = secondPlayerName;
         }
 
         public string Score()
