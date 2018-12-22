@@ -79,6 +79,13 @@ namespace TennisDay30Tests
             ScoreShouldBe("Deuce");
         }
 
+        [TestMethod]
+        public void FirstPlayer_Adv()
+        {
+            GivenDeuce();
+            GivenFirstPlayerScoreTimes(1);
+            ScoreShouldBe("Joey Win");
+        }
         private void GivenDeuce()
         {
             GivenFirstPlayerScoreTimes(3);
