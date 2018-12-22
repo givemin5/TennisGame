@@ -4,6 +4,7 @@ namespace TennisDay30
 {
     public class Tennis
     {
+        private readonly string _firstPlayerName;
         private int _firstPlayerScoreTimes;
         private int _secondPlayerScoreTimes;
 
@@ -15,10 +16,23 @@ namespace TennisDay30
             {3, "Forty"},
         };
 
+        public Tennis(string firstPlayerName)
+        {
+            _firstPlayerName = firstPlayerName;
+        }
+
         public string Score()
         {
             if (IsScoreDifferent())
             {
+                if (_firstPlayerScoreTimes>3)
+                {
+                    if (_firstPlayerScoreTimes-_secondPlayerScoreTimes==1)
+                    {
+                        return $"{_firstPlayerName} Adv";
+                    }
+                }
+
                 return LookupScore();
             }
 
