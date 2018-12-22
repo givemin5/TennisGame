@@ -26,26 +26,12 @@ namespace TennisDay30
 
         public string Score()
         {
-            if (IsScoreDifferent())
-            {
-                if (IsReadyForGamePoint())
-                {
-                    if (IsAdv())
-                    {
-                        return $"{AdvPlayer()} Adv";
-                    }
-                        return $"{AdvPlayer()} Win";
-                }
+            return IsScoreDifferent() ? IsReadyForGamePoint() ? AdvState() : LookupScore() : IsDeuce() ? Deuce() : SameScore();
+        }
 
-                return LookupScore();
-            }
-
-            if (IsDeuce())
-            {
-                return Deuce();
-            }
-
-            return SameScore();
+        private string AdvState()
+        {
+            return IsAdv() ? $"{AdvPlayer()} Adv" : $"{AdvPlayer()} Win";
         }
 
         private bool IsReadyForGamePoint()
