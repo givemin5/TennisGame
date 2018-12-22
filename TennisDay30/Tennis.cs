@@ -28,9 +28,9 @@ namespace TennisDay30
         {
             if (IsScoreDifferent())
             {
-                if (_firstPlayerScoreTimes>3||_secondPlayerScoreTimes>3)
+                if (IsReadyForGamePoint())
                 {
-                    if (Math.Abs(_firstPlayerScoreTimes-_secondPlayerScoreTimes)==1)
+                    if (IsAdv())
                     {
                         var advPlayer = AdvPlayer();
                         return $"{advPlayer} Adv";
@@ -46,6 +46,16 @@ namespace TennisDay30
             }
 
             return SameScore();
+        }
+
+        private bool IsReadyForGamePoint()
+        {
+            return _firstPlayerScoreTimes>3||_secondPlayerScoreTimes>3;
+        }
+
+        private bool IsAdv()
+        {
+            return Math.Abs(_firstPlayerScoreTimes-_secondPlayerScoreTimes)==1;
         }
 
         private string AdvPlayer()
