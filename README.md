@@ -16,7 +16,7 @@
 | 15 |15 | Fifteen All |
 | 30 | 30 | Thirty All |
 | 40 | 40 | Forty All |
-| 40 |+ 贏一球 | 40 |FirstPlayer Adv |
+| 40 | + 贏一球 | 40 |FirstPlayer Adv |
 | 40 | 40 + 贏一球 | SecondPlayer Adv |
 | 40 + 贏兩球 | 40 | FirstPlayer Win |
 
